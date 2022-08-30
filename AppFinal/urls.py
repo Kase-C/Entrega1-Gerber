@@ -10,5 +10,7 @@ urlpatterns = [
     path('busquedaMascota/', busquedaMascota, name='busquedaMascota'),
     path('busquedaEstudios/', busquedaEstudios, name='busquedaEstudios'),
     path('buscarUsuario/', buscarUsuario, name='buscarUsuario'),
+    path('buscarMascota/', buscarMascota, name='buscarMascota'),
+    path('buscarEstudios/', buscarEstudios, name='buscarEstudios'),
     path('', inicio, name='inicio'),
 ]

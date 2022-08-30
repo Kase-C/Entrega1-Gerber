@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block introduccion %}
+
+
+    {% if mensaje %}
+    <h2>{{ mensaje }}</h2>
+
+    {% else %}
+
+
+    <h1>Resultados de la Busqueda</h1>
+
+    {% for mascota in mascotas %}
+
+    <h2>{{ mascota.animal }}</h2>
+    <h2>{{ mascota.edad }}</h2>
+    --
+
+    {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}

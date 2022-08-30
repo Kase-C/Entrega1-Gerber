@@ -5,7 +5,7 @@
 
 
     <h1 class="display-5 fw-bold">Buscar a una Mascota por el nombre del animal</h1>
-    <form action="{% url 'busquedaMascota' %}" method="GET"> {% csrf_token %}
+    <form action="{% url 'buscarMascota' %}" method="GET"> {% csrf_token %}
 
         <p>Animal:<input type="text" name="animal", id="animal"></p>
         

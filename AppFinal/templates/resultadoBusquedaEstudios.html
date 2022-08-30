@@ -1,0 +1,26 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block introduccion %}
+
+
+    {% if mensaje %}
+    <h2>{{ mensaje }}</h2>
+
+    {% else %}
+
+
+    <h1>Resultados de la Busqueda</h1>
+
+    {% for estudio in estudios %}
+
+    <h2>{{ estudio.carrera }}</h2>
+    <h2>{{ estudio.institucion }}</h2>
+    --
+
+    {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}

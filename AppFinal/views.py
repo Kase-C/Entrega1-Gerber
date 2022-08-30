@@ -75,3 +75,25 @@ def buscarUsuario(request):
     else:
         return render(request, "busquedaUsuario.html", {"mensaje": "No enviaste datos!"})
 
+def buscarMascota(request):
+    if request.GET["animal"]:
+        animal = request.GET["animal"]
+        mascotas = Mascota.objects.filter(animal = animal)
+        if len(mascotas)!=0:
+            return render(request, "resultadoBusquedaMascota.html", {"mascotas":mascotas})
+        else:
+            return render(request, "resultadoBusquedaMascota.html", {"mensaje": "No hay Mascotas de ese tipo"})
+    else:
+        return render(request, "busquedaMascota.html", {"mensaje": "No enviaste datos!"})
+
+def buscarEstudios(request):
+    if request.GET["carrera"]:
+        carrera = request.GET["carrera"]
+        estudios = Estudios.objects.filter(carrera = carrera)
+        if len(estudios)!=0:
+            return render(request, "resultadoBusquedaEstudios.html", {"estudios":estudios})
+        else:
+            return render(request, "resultadoBusquedaEstudios.html", {"mensaje": "No hay Estudios de esa carrera"})
+    else:
+        return render(request, "busquedaEstudios.html", {"mensaje": "No enviaste datos!"})
+

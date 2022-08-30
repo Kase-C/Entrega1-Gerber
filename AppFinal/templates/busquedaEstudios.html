@@ -5,7 +5,7 @@
 
 
     <h1 class="display-5 fw-bold">Buscar estudios por la carrera</h1>
-    <form action="{% url 'busquedaEstudios' %}" method="GET"> {% csrf_token %}
+    <form action="{% url 'buscarEstudios' %}" method="GET"> {% csrf_token %}
 
         <p>Carrera:<input type="text" name="carrera", id="carrera"></p>
         
