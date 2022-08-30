@@ -4,8 +4,18 @@
 {% block introduccion %}
 
 
-    <h1 class="display-5 fw-bold">formulario usuario</h1>
-    <p class="fs-4">formulario usuario cuerpo</p>
+    <h1 class="display-5 fw-bold">Formulario para crear un usuario</h1>
+    <form action="{% url 'formularioUsuario' %}" method="POST"> {% csrf_token %}
+
+        <table>
+        
+            {{ formulario.as_table }}
+            
+        </table>
+        
+        <input type="submit", value="Enviar">
+        
+        </form>
 
 
 {% endblock %}

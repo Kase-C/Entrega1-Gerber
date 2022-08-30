@@ -11,4 +11,4 @@ class Mascota(models.Model):
 
 class Estudios(models.Model):
     carrera = models.CharField(max_length=50)
-    institucion = models.IntegerField()
+    institucion = models.CharField(max_length=50)

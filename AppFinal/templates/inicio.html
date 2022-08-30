@@ -6,6 +6,15 @@
 
     <h1 class="display-5 fw-bold">Bienvenido!</h1>
     <p class="fs-4">Entrega Intermedia Proyecto Final</p>
+    {% if resultado == "Usuario Creado" %}
+
+    <h2 style = color:green>{{ resultado }}</h2>
+
+    {% else %}
+
+    <h2 style = color:red>{{ resultado }}</h2>
+
+    {% endif %}
 
 
 {% endblock %}
