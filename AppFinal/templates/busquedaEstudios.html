@@ -1,0 +1,20 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block introduccion %}
+
+
+    <h1 class="display-5 fw-bold">Buscar estudios por la carrera</h1>
+    <form action="{% url 'busquedaEstudios' %}" method="GET"> {% csrf_token %}
+
+        <p>Carrera:<input type="text" name="carrera", id="carrera"></p>
+        
+        
+        <input type="submit", value="Buscar">
+        
+        </form>
+        
+        <h2 >{{ mensaje }}</h2>
+
+
+{% endblock %}

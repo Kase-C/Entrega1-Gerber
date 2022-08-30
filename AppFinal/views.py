@@ -55,11 +55,23 @@ def formularioEstudios(request):
         formulario_estudios = FormularioEstudios()
     return render(request, "formularioEstudios.html", {"formulario":formulario_estudios})
 
+def busquedaUsuario(request):
+    return render(request, "busquedaUsuario.html")
+
+def busquedaMascota(request):
+    return render(request, "busquedaMascota.html")
+
+def busquedaEstudios(request):
+    return render(request, "busquedaEstudios.html")
+
 def buscarUsuario(request):
-    return render(request, "buscarUsuario.html")
+    if request.GET["nombre_usuario"]:
+        nombre_usuario = request.GET["nombre_usuario"]
+        usuarios = Usuario.objects.filter(nombre_usuario = nombre_usuario)
+        if len(usuarios)!=0:
+            return render(request, "resultadoBusquedaUsuario.html", {"usuarios":usuarios})
+        else:
+            return render(request, "resultadoBusquedaUsuario.html", {"mensaje": "No hay usuarios con ese nombre"})
+    else:
+        return render(request, "busquedaUsuario.html", {"mensaje": "No enviaste datos!"})
 
-def buscarMascota(request):
-    return render(request, "buscarMascota.html")
-
-def buscarEstudios(request):
-    return render(request, "buscarEstudios.html")

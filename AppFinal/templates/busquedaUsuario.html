@@ -1,0 +1,21 @@
+{% extends "padre.html" %}
+{% load static %}
+
+{% block introduccion %}
+
+
+    <h1 class="display-5 fw-bold">Buscar a un Usuario por su nombre</h1>
+    <form action="{% url 'buscarUsuario' %}" method="GET"> {% csrf_token %}
+
+        <p>Usario:<input type="text" name="nombre_usuario", id="nombre_usuario"></p>
+        
+        
+        <input type="submit", value="Buscar">
+        
+        </form>
+        
+        <h2 >{{ mensaje }}</h2>
+        
+
+
+{% endblock %}
