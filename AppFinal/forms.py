@@ -13,4 +13,4 @@ class FormularioMascota(forms.Form):
 
 class FormularioEstudios(forms.Form):
     carrera = forms.CharField(max_length=50)
-    contraseña = forms.CharField(max_length=50)
+    institucion = forms.CharField(max_length=50)

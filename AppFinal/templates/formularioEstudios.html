@@ -4,8 +4,18 @@
 {% block introduccion %}
 
 
-    <h1 class="display-5 fw-bold">formulario estudios</h1>
-    <p class="fs-4">formulario estudios cuerpo</p>
+    <h1 class="display-5 fw-bold">Formulario para guardar tus estudios</h1>
+    <form action="{% url 'formularioEstudios' %}" method="POST"> {% csrf_token %}
+
+        <table>
+        
+            {{ formulario.as_table }}
+            
+        </table>
+        
+        <input type="submit", value="Enviar">
+        
+        </form>
 
 
 {% endblock %}

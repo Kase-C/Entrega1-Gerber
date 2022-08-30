@@ -4,8 +4,18 @@
 {% block introduccion %}
 
 
-    <h1 class="display-5 fw-bold">formulario mascota</h1>
-    <p class="fs-4">formulario mascota cuerpo</p>
+    <h1 class="display-5 fw-bold">Formulario para registrar a tu mascota</h1>
+    <form action="{% url 'formularioMascota' %}" method="POST"> {% csrf_token %}
+
+        <table>
+        
+            {{ formulario.as_table }}
+            
+        </table>
+        
+        <input type="submit", value="Enviar">
+        
+        </form>
 
 
 {% endblock %}
